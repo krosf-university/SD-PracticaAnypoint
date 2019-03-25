@@ -1,68 +1,6 @@
-\documentclass[12pt]{article}
-\usepackage[spanish]{babel}
-\usepackage[square,sort,comma,numbers]{natbib}
-\usepackage{url}
-\usepackage{hyperref}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\graphicspath{{images/}}
-\usepackage{parskip}
-\usepackage{fancyhdr}
-\usepackage{vmargin}
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue,
-}
-\setmarginsrb{3 cm}{2.5 cm}{1 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
-
-\title{Práctica: Anypoint}
-% Title
-\author{Kevin López Cala \break Carlos Rodrigo Sanabria Flores}
-% Author
-\date{\today}
-% Date
-\makeatletter
-\let\thetitle\@title
-\let\theauthor\@author
-\let\thedate\@date
-\makeatother
-
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Sistemas Distribuidos}
-\lhead{\thetitle}
-\cfoot{\thepage}
-
+\input{prelude}
 \begin{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{titlepage}
-	\centering
-	\vspace*{0.5 cm}
-	\textsc{\Large Grado en Ingeniería Informática}\\[0.5 cm]
-	\textsc{\LARGE Sistemas Distrbuidos}\\[0.5 cm]
-	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
-	{ \huge \bfseries \thetitle}\\
-	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
-	\begin{minipage}{0.4\textwidth}
-		\begin{flushleft} \large
-			\emph{Autores:}\\
-			\theauthor
-		\end{flushleft}
-	\end{minipage}~
-	\begin{minipage}{0.453\textwidth}
-		\begin{flushright} \large
-			\emph{Fecha:}\\
-			\thedate
-		\end{flushright}
-	\end{minipage}\\[2 cm]
-	\vfill
-\end{titlepage}
-\pagebreak
+\input{portada}
 \section{Descripción del flujo \textit{subscribe}}
 \begin{itemize}
 	\item El nombre del flujo se denomina subscribe.
@@ -72,6 +10,16 @@
 	\item Esquema del funcionamiento con descripcion
 	\item Capturas de pantalla del funcionamiento
 	\item Formato del flujo %% Flujo
+    \begin{minted}{json}
+{
+  "subscribe": {
+    "campus": "esi",
+    "chatid": 83534726,
+    "id": "plt@83534726",
+    "username": "username"
+  }
+}
+    \end{minted}
 \end{itemize}
 \section{Descrición del flujo \textit{image}}
 \begin{itemize}
@@ -79,9 +27,20 @@
 	\item El sensor se encuentra en toda España.
 	\item URL POSIBLE SI NO BORRAR
 	\item NO LO SE min.
-	\item Formato del flujo. %% Flujo
 	\item Esquema del funcionamiento con descripcion
 	\item Capturas de pantalla del funcionamiento
+	\item Formato del flujo. %% Flujo
+	\begin{minted}{json}
+{
+  "image": {
+    "chatid": 83534726,
+    "id": "plt@83534726",
+    "url": "http://example.com",
+    "campus": "esi",
+    "date": "02122020"
+    }
+}
+    \end{minted}
 \end{itemize}
 
 \section{Errores}
@@ -90,17 +49,5 @@
 	      es nulo tuvimos que poner como condición ,
 	      \textbf{payload is org.mule.transport.NullPayload}
 \end{itemize} 
-
-\newpage
-\begin{thebibliography}{X}
-	\bibitem{Bot Twitter} 
-	\textsc{Bot Twitter}
-	\href{http://docs.tweepy.org/en/v3.4.0/getting_started.html}{\textit{Tweepy.}}
-	\href{https://developer.twitter.com/en.html}{\textit{API Twitter.}}
-	\bibitem{Bot Telegram} 
-	\textsc{Bot Telegram}
-	\href{https://telegraf.js.org/#/}{\textit{Telegraf.}}
-				
-\end{thebibliography}
-
+\input{bibliografia}
 \end{document}
